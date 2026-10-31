@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Nexusclass uses AI face and voice recognition to help teachers take attendance and manage classroom records.">
+    <meta name="theme-color" content="#3f3a63">
+    <title>Nexusclass | AI Attendance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&amp;family=Outfit:wght@300..700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+</head>
+<body>
+    <div class="nx-bg" aria-hidden="true">
+        <i class="nx-shape nx-s1"></i>
+        <i class="nx-shape nx-s2"></i>
+        <i class="nx-shape nx-s3"></i>
+        <i class="nx-shape nx-s4"></i>
+    </div>
+
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" href="#home" aria-label="Nexusclass home">
+            <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true">
+                <rect width="48" height="48" rx="10" fill="#0f172a"></rect>
+                <path d="M12 19v-4a3 3 0 0 1 3-3h4M29 12h4a3 3 0 0 1 3 3v4M36 29v4a3 3 0 0 1-3 3h-4M19 36h-4a3 3 0 0 1-3-3v-4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"></path>
+                <circle cx="24" cy="24" r="7" fill="#14b8a6"></circle>
+                <path d="M20.5 24l2.5 2.5 4.5-5" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <span class="logo-text">Nexusclass</span>
+        </a>
+        <div class="nav-links" id="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#journey">Journey</a>
+            <a href="#tech">Tech Stack</a>
+            <a href="#faq">FAQ</a>
+            <a class="btn btn-teal nav-cta" href="https://nexusattendance.streamlit.app/">Start AI Attendance <span aria-hidden="true">→</span></a>
+        </div>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main class="wrap">
+        <section class="hero" id="home">
+            <div>
+                <p class="hero-eyebrow">AI attendance for modern classrooms</p>
+                <h1>Take attendance with <span>one photo</span>.</h1>
+                <p>Nexusclass uses AI face and voice recognition to mark your whole class in seconds, then lets you review, save and export every record.</p>
+                <div class="cta">
+                    <a class="btn btn-teal" href="https://nexusattendance.streamlit.app/">Start AI Attendance <span aria-hidden="true">→</span></a>
+                    <a class="btn btn-line" href="#journey">See how it works</a>
+                </div>
+                <ul class="hero-points" aria-label="Key benefits">
+                    <li>Face recognition</li>
+                    <li>Voice attendance</li>
+                    <li>Reviewable records</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sec" id="how">
+            <h2>How it works</h2>
+            <p class="lead">Three steps from the classroom to a saved record.</p>
+            <div class="grid">
+                <article class="card"><div class="n" aria-hidden="true">1</div><h3>Snap</h3><p>Pick your subject and add one or more photos of the class.</p></article>
+                <article class="card"><div class="n" aria-hidden="true">2</div><h3>Analyze</h3><p>Run face analysis, or use voice attendance, to see who is present.</p></article>
+                <article class="card"><div class="n" aria-hidden="true">3</div><h3>Confirm</h3><p>Review the list, save it, and the record is ready to search or download.</p></article>
+            </div>
+        </section>
+
+        <section class="sec" id="features">
+            <h2>Everything for a modern classroom</h2>
+            <p class="lead">From first photo to final report, each step is built to save teachers time.</p>
+            <div class="grid">
+                <article class="card"><div class="n" aria-hidden="true">1</div><h3>Face attendance</h3><p>Add group photos and the AI matches faces to enrolled students, showing which photos each person appeared in.</p></article>
+                <article class="card"><div class="n" aria-hidden="true">2</div><h3>Voice attendance</h3><p>Students save a short voice profile so teachers can take attendance by voice too.</p></article>
+                <article class="card"><div class="n" aria-hidden="true">3</div><h3>Review before saving</h3><p>Check every present and absent result, then confirm and save or discard the run.</p></article>
+                <article class="card"><div class="n" aria-hidden="true">4</div><h3>Share by link or QR</h3><p>Every subject gets a code, a copyable link and a QR code so students can join instantly.</p></article>
+                <article class="card"><div class="n" aria-hidden="true">5</div><h3>Searchable records</h3><p>Browse past sessions, search, view fullscreen and download attendance records.</p></article>
+                <article class="card"><div class="n" aria-hidden="true">6</div><h3>Student portal</h3><p>Students enroll with a code, sign in with Face ID and see total versus attended classes per subject.</p></article>
+            </div>
+        </section>
+
+        <section class="sec" id="why">
+            <h2>Why Nexusclass</h2>
+            <p class="lead">Roll calls take time away from teaching. Here is the difference.</p>
+            <div class="cmp">
+                <div class="card">
+                    <h3>Manual roll call</h3>
+                    <ul><li>Calling names one by one</li><li>Paper sheets that get lost</li><li>Hard to search old records</li><li>Students must be called twice if missed</li></ul>
+                </div>
+                <div class="card new">
+                    <h3>With Nexusclass</h3>
+                    <ul><li>One photo or one voice check</li><li>Every session saved automatically</li><li>Search and download any record</li><li>Students track their own attendance</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec" id="journey">
+            <h2>The journey</h2>
+            <p class="lead">Scroll through each screen, one track for teachers and one for students.</p>
+            <h3 class="role"><i aria-hidden="true"></i>Teacher</h3>
+            <div class="track" aria-label="Teacher journey">
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/teacher_resistration.png') }}" alt="Teacher registration form"><figcaption><b>1</b><strong>Register</strong><span>Create a teacher account with email and password.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/teacher_logging.png') }}" alt="Teacher sign-in with email"><figcaption><b>2</b><strong>Sign in</strong><span>Log in securely, with password reset if needed.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/add_subject.png') }}" alt="Create new subject dialog"><figcaption><b>3</b><strong>Create a subject</strong><span>Add a code, name and section.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/share_link.png') }}" alt="Share class link with QR code"><figcaption><b>4</b><strong>Share the class</strong><span>Send the link or let students scan the QR.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/take_attent.png') }}" alt="Added photos ready for face analysis"><figcaption><b>5</b><strong>Add photos</strong><span>Upload class photos, then run face analysis or voice.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/report.png') }}" alt="Attendance report review"><figcaption><b>6</b><strong>Review</strong><span>Confirm results before they are saved.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/attendance_record.png') }}" alt="Attendance records table"><figcaption><b>7</b><strong>Track records</strong><span>Search, download and view every session.</span></figcaption></figure>
+            </div>
+            <h3 class="role role-student"><i aria-hidden="true"></i>Student</h3>
+            <div class="track" aria-label="Student journey">
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/loging dash board.png') }}" alt="Student and teacher portal choice"><figcaption><b>1</b><strong>Choose a portal</strong><span>Students and teachers each get their own entry.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/student_logging.png') }}" alt="Sign in with Face ID"><figcaption><b>2</b><strong>Face ID sign-in</strong><span>Look at the camera and take a photo to log in.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/student_dash.png') }}" alt="Student dashboard with enrolled subjects"><figcaption><b>3</b><strong>Your dashboard</strong><span>See each subject with total and attended classes.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/enroll-session.png') }}" alt="Enroll in a subject dialog"><figcaption><b>4</b><strong>Enroll</strong><span>Enter the code your teacher shared.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/quick enroll.png') }}" alt="Quick enrollment prompt"><figcaption><b>5</b><strong>Quick enroll</strong><span>Join straight from a shared link in one tap.</span></figcaption></figure>
+                <figure class="step"><img loading="lazy" src="{{ url_for('static', filename='img/demo/voice.png') }}" alt="Update voice profile panel"><figcaption><b>6</b><strong>Voice profile</strong><span>Record a short phrase for voice attendance.</span></figcaption></figure>
+            </div>
+        </section>
+
+        <section class="sec" id="roadmap">
+            <span class="soon">Coming soon</span>
+            <h2>Class notes, shared with every enrolled student</h2>
+            <p class="lead">Next, teachers will be able to add notes to a subject and share them with the students enrolled in it.</p>
+            <div class="grid">
+                <article class="card planned"><div class="n" aria-hidden="true">1</div><h3>Add notes</h3><p>Write or attach notes to any subject you manage.</p></article>
+                <article class="card planned"><div class="n" aria-hidden="true">2</div><h3>Share on enrollment</h3><p>Notes reach everyone enrolled in that subject, including students who join later.</p></article>
+                <article class="card planned"><div class="n" aria-hidden="true">3</div><h3>Read anywhere</h3><p>Students open the notes from their subject card in the student portal.</p></article>
+            </div>
+        </section>
+
+        <section class="sec" id="tech">
+            <h2>Tech stack</h2>
+            <p class="lead">The tools behind the experience.</p>
+            <div class="chips">
+                <span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">Flask landing page</span>
+                <span class="chip">AI face recognition</span><span class="chip">Voice recognition</span><span class="chip">QR code sharing</span>
+                <span class="chip">Email authentication</span><span class="chip">Face ID sign-in</span>
+            </div>
+        </section>
+
+        <section class="sec" id="faq">
+            <h2>Questions</h2>
+            <p class="lead">Quick answers about how Nexusclass works.</p>
+            <details><summary>How does face attendance work?</summary><p>You add class photos, run face analysis, and the AI matches faces to enrolled students. You then review the results before anything is saved.</p></details>
+            <details><summary>Can I take attendance by voice instead?</summary><p>Yes. Students record a short voice profile in their portal, and teachers can choose Use Voice Attendance.</p></details>
+            <details><summary>Can I check the results before saving?</summary><p>Yes. The report shows each student as present or absent with the photos they were found in. You can then confirm and save, or discard it.</p></details>
+            <details><summary>How do students join a subject?</summary><p>Share the subject link or QR code, or give them the subject code to enter in their portal. A quick enrollment prompt appears when they open a shared link.</p></details>
+            <details><summary>Can students see their own attendance?</summary><p>Yes. Their dashboard shows total classes and attended classes for every enrolled subject.</p></details>
+            <details><summary>Where do I find past sessions?</summary><p>Open Attendance Records to browse every session, then search, view fullscreen or download.</p></details>
+        </section>
+
+        <section class="cta-band" aria-labelledby="cta-title">
+            <h2 id="cta-title">Ready to skip the roll call?</h2>
+            <p>Create your teacher account and take your first AI attendance in minutes.</p>
+            <a class="btn btn-white" href="https://nexusattendance.streamlit.app/">Start AI Attendance <span aria-hidden="true">→</span></a>
+        </section>
+    </main>
+
+    <footer>Created with <span aria-label="love">♥</span> by Abhishek Tiwari</footer>
+
+    <script>
+        (function () {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+            document.documentElement.classList.add('js');
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.card, .chip, details, .cta-band').forEach(function (element) {
+                observer.observe(element);
+            });
+        }());
+    </script>
+    <script>
+        (function () {
+            var navbar = document.querySelector('.navbar');
+            var button = document.querySelector('.menu-btn');
+            if (!navbar || !button) return;
+
+            function setMenuOpen(isOpen) {
+                navbar.classList.toggle('open', isOpen);
+                button.setAttribute('aria-expanded', String(isOpen));
+                button.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+            }
+
+            button.addEventListener('click', function () {
+                setMenuOpen(button.getAttribute('aria-expanded') !== 'true');
+            });
+
+            navbar.querySelectorAll('.nav-links a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenuOpen(false);
+                });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+                    setMenuOpen(false);
+                    button.focus();
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 860) setMenuOpen(false);
+            });
+        }());
+    </script>
+</body>
+</html>
