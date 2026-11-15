@@ -215,5 +215,283 @@
             });
         }());
     </script>
+    <!-- Nexusclass AI Chat Widget -->
+    <style>
+        .nx-chat-toggle {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+        }
+        .nx-chat-toggle:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.6);
+        }
+        .nx-chat-toggle svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+        .nx-chat-box {
+            position: fixed;
+            bottom: 95px;
+            right: 24px;
+            width: 380px;
+            max-width: calc(100vw - 32px);
+            height: 540px;
+            max-height: calc(100vh - 120px);
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 9999;
+            font-family: 'Outfit', sans-serif;
+            animation: nxFadeUp 0.25s ease-out;
+        }
+        @keyframes nxFadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nx-chat-header {
+            padding: 16px 18px;
+            background: #1e293b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nx-chat-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.98rem;
+        }
+        .nx-status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+        }
+        .nx-chat-close {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 20px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px;
+        }
+        .nx-chat-close:hover {
+            color: #fff;
+        }
+        .nx-chat-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .nx-msg {
+            max-width: 85%;
+            padding: 11px 14px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            word-break: break-word;
+        }
+        .nx-msg-agent {
+            background: #1e293b;
+            color: #f1f5f9;
+            border-bottom-left-radius: 4px;
+            align-self: flex-start;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .nx-msg-user {
+            background: #14b8a6;
+            color: #042f2e;
+            font-weight: 500;
+            border-bottom-right-radius: 4px;
+            align-self: flex-end;
+        }
+        .nx-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .nx-pill {
+            background: rgba(20, 184, 166, 0.12);
+            color: #2dd4bf;
+            border: 1px solid rgba(45, 212, 191, 0.3);
+            border-radius: 16px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .nx-pill:hover {
+            background: rgba(20, 184, 166, 0.25);
+        }
+        .nx-chat-input-row {
+            padding: 12px;
+            background: #1e293b;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            gap: 8px;
+        }
+        .nx-chat-input {
+            flex: 1;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 9px 14px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+            font-family: inherit;
+        }
+        .nx-chat-input:focus {
+            border-color: #14b8a6;
+        }
+        .nx-send-btn {
+            background: #14b8a6;
+            border: none;
+            color: #042f2e;
+            font-weight: 700;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        .nx-send-btn:hover {
+            transform: scale(1.08);
+        }
+        .nx-typing {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-style: italic;
+            align-self: flex-start;
+            display: none;
+        }
+    </style>
+
+    <button id="nxChatToggle" class="nx-chat-toggle" aria-label="Open Nexusclass AI Assistant">
+        <svg viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+        </svg>
+    </button>
+
+    <div id="nxChatBox" class="nx-chat-box">
+        <div class="nx-chat-header">
+            <div class="nx-chat-title">
+                <span class="nx-status-dot"></span>
+                <span>Nexusclass AI Assistant</span>
+            </div>
+            <button id="nxChatClose" class="nx-chat-close" aria-label="Close Chat">&times;</button>
+        </div>
+        <div id="nxChatMessages" class="nx-chat-messages">
+            <div class="nx-msg nx-msg-agent">
+                Hello! ?? I'm the Nexusclass AI Assistant. Ask me anything about taking attendance with photos, teacher dashboards, or trying our demo!
+                <div class="nx-suggestions">
+                    <button class="nx-pill" onclick="sendQuickPrompt('How does photo attendance work?')">?? Photo Attendance</button>
+                    <button class="nx-pill" onclick="sendQuickPrompt('What features are in the teacher portal?')">????? Teacher Portal</button>
+                    <button class="nx-pill" onclick="sendQuickPrompt('How can I test the live demo?')">?? Live Demo</button>
+                </div>
+            </div>
+            <div id="nxTyping" class="nx-typing">Nexus Assistant is typing...</div>
+        </div>
+        <form id="nxChatForm" class="nx-chat-input-row" onsubmit="handleChatSubmit(event)">
+            <input id="nxChatInput" class="nx-chat-input" type="text" placeholder="Ask a question..." autocomplete="off">
+            <button type="submit" class="nx-send-btn" aria-label="Send">?</button>
+        </form>
+    </div>
+
+    <script>
+        const chatToggle = document.getElementById('nxChatToggle');
+        const chatBox = document.getElementById('nxChatBox');
+        const chatClose = document.getElementById('nxChatClose');
+        const chatInput = document.getElementById('nxChatInput');
+        const chatMessages = document.getElementById('nxChatMessages');
+        const typingIndicator = document.getElementById('nxTyping');
+
+        chatToggle.addEventListener('click', () => {
+            const isVisible = chatBox.style.display === 'flex';
+            chatBox.style.display = isVisible ? 'none' : 'flex';
+            if (!isVisible) chatInput.focus();
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatBox.style.display = 'none';
+        });
+
+        function appendMessage(text, isUser) {
+            const msg = document.createElement('div');
+            msg.className = 'nx-msg ' + (isUser ? 'nx-msg-user' : 'nx-msg-agent');
+            msg.innerHTML = text.replace(/\n/g, '<br>');
+            chatMessages.insertBefore(msg, typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function sendUserMessage(msgText) {
+            if (!msgText) return;
+            appendMessage(msgText, true);
+            typingIndicator.style.display = 'block';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: msgText })
+                });
+                const data = await res.json();
+                typingIndicator.style.display = 'none';
+                if (data.response) {
+                    appendMessage(data.response, false);
+                } else {
+                    appendMessage("Sorry, I encountered an issue: " + (data.error || "Unknown error"), false);
+                }
+            } catch (err) {
+                typingIndicator.style.display = 'none';
+                appendMessage("Failed to reach the assistant server. Is app.py running?", false);
+            }
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const text = chatInput.value.trim();
+            if (!text) return;
+            chatInput.value = '';
+            sendUserMessage(text);
+        }
+
+        function sendQuickPrompt(promptText) {
+            sendUserMessage(promptText);
+        }
+    </script>
 </body>
 </html>
