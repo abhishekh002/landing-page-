@@ -384,10 +384,23 @@
         <div id="nxChatMessages" class="nx-chat-messages">
             <div class="nx-msg nx-msg-agent">
                 Hello! &#128075; I'm the Nexusclass AI Assistant. Ask me anything about taking attendance with photos, our interactive living notes, or testing the working app!
-                <div class="nx-suggestions">
-                    <button class="nx-pill" onclick="sendQuickPrompt('Where can I try the live working app?')">&#127760; Live App</button>
-                    <button class="nx-pill" onclick="sendQuickPrompt('What are the YouTube video guide links?')">&#127916; Video Guides</button>
-                    <button class="nx-pill" onclick="sendQuickPrompt('How does multi-angle photo attendance work?')">&#128248; Photo Attendance</button>
+                <div class="nx-suggestions" aria-label="Suggested questions">
+                    <p class="nx-suggestions-label">Choose a question to get started</p>
+                    <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('Where can I try the live working app?')">
+                        <span class="nx-prompt-icon" aria-hidden="true">&#127760;</span>
+                        <span class="nx-prompt-copy"><strong>Try the live app</strong><span>Where can I try the live app?</span></span>
+                        <span class="nx-prompt-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+                    <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('What are the YouTube video guide links?')">
+                        <span class="nx-prompt-icon" aria-hidden="true">&#127916;</span>
+                        <span class="nx-prompt-copy"><strong>Watch video guides</strong><span>Show me the teacher and student guides</span></span>
+                        <span class="nx-prompt-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+                    <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('How does multi-angle photo attendance work?')">
+                        <span class="nx-prompt-icon" aria-hidden="true">&#128248;</span>
+                        <span class="nx-prompt-copy"><strong>Photo attendance</strong><span>How does photo attendance work?</span></span>
+                        <span class="nx-prompt-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
                 </div>
             </div>
             <div id="nxTyping" class="nx-typing">Nexus Assistant is typing...</div>
