@@ -1,0 +1,198 @@
+/* Nexusclass motion layer. Loads after styles.css; nothing in styles.css is changed. */
+
+/* ---------- Page-load sequence (the one orchestrated entrance) ---------- */
+@keyframes nx-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.hero > div > * { animation: nx-rise .7s cubic-bezier(.2, .8, .2, 1) both; }
+.hero > div > :nth-child(2) { animation-delay: .08s; }
+.hero > div > :nth-child(3) { animation-delay: .16s; }
+.hero > div > :nth-child(4) { animation-delay: .24s; }
+.hero > div > :nth-child(5) { animation-delay: .32s; }
+.hero > div > .scan { animation-delay: .45s; }
+
+/* ---------- Hero demo: multi-angle scan ---------- */
+.scan { max-width: 720px; margin: 44px auto 0; }
+.scan-frames {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(88, 101, 242, .18);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(30, 27, 75, .14);
+}
+.scan-pic {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #2b2757, #3f3a63);
+}
+.scan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 8px;
+  padding: 18px 10px 34px;
+}
+.scan-pic figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 8px;
+  color: rgba(255, 255, 255, .7);
+  font-size: .78rem;
+  font-weight: 500;
+}
+.face {
+  position: relative;
+  display: block;
+  width: clamp(30px, 7vw, 54px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+.face i {
+  position: absolute;
+  left: 25%;
+  top: 8%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: var(--tone);
+}
+.face::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0;
+  height: 38%;
+  border-radius: 50% 50% 0 0;
+  background: var(--tone);
+  opacity: .8;
+}
+.box {
+  position: absolute;
+  inset: -5px;
+  z-index: 1;
+  border: 2px solid var(--teal);
+  border-radius: 10px;
+  box-shadow: 0 0 14px rgba(20, 184, 166, .55);
+}
+.dup .box {
+  border: 2px dashed var(--pink);
+  box-shadow: 0 0 14px rgba(236, 72, 153, .45);
+}
+.box em {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-top: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font: 600 .66rem/1.5 'Outfit', sans-serif;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.scan-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 2px;
+  background: var(--teal);
+  box-shadow: 0 0 18px 6px rgba(20, 184, 166, .5);
+  opacity: 0;
+  pointer-events: none;
+}
+.scan.run .scan-line { animation: nx-sweep 3.9s linear forwards; }
+.scan.run .box { animation: nx-lock .45s cubic-bezier(.2, .9, .3, 1) var(--d, 0s) both; }
+@keyframes nx-sweep {
+  0% { left: 0; opacity: 1; }
+  96% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+@keyframes nx-lock {
+  from { opacity: 0; transform: scale(1.6); }
+  60% { opacity: 1; }
+  to { opacity: 1; transform: none; }
+}
+.scan-hud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 28px;
+  margin-top: 16px;
+  font-weight: 500;
+}
+.scan-hud output {
+  margin-right: 6px;
+  color: var(--indigo);
+  font: 700 1.7rem 'Outfit', sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+.scan-hud .dups output { color: var(--pink); }
+
+/* ---------- Scroll progress + nav state ---------- */
+.navbar { transition: background-color .3s ease, box-shadow .3s ease; }
+.navbar.scrolled {
+  background: rgba(43, 39, 87, .96);
+  box-shadow: 0 8px 24px rgba(30, 27, 75, .18);
+}
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--indigo), var(--pink));
+  transform: scaleX(var(--p, 0));
+  transform-origin: 0 50%;
+}
+
+/* ---------- Cards, chips: hover that answers the pointer ---------- */
+.js .card,
+.js .chip { transition: opacity .5s ease, transform .3s ease, box-shadow .3s ease; }
+.js .card.in:hover,
+.js .chip.in:hover { transform: translateY(-4px); }
+.card:hover { box-shadow: 0 14px 34px rgba(88, 101, 242, .2); }
+.chip:hover { box-shadow: 0 10px 24px rgba(88, 101, 242, .2); }
+.card .n { transition: transform .3s cubic-bezier(.3, 1.6, .5, 1); }
+.card:hover .n { transform: rotate(-8deg) scale(1.1); }
+.cmp .card.new { box-shadow: 0 14px 38px rgba(20, 184, 166, .22); }
+
+/* ---------- Closing band + chat button ---------- */
+.cta-band {
+  background: linear-gradient(120deg, #4f46e5, #06b6d4, #5865f2, #4f46e5);
+  background-size: 300% 100%;
+  animation: nx-drift 14s ease-in-out infinite alternate;
+}
+@keyframes nx-drift { to { background-position: 100% 50%; } }
+
+.nx-chat-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--indigo);
+  border-radius: 50%;
+  animation: nx-ping 2s ease-out 1.5s 3 both;
+  pointer-events: none;
+}
+@keyframes nx-ping {
+  from { opacity: .7; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.7); }
+}
+
+@media (max-width: 560px) {
+  .scan { margin-top: 32px; }
+  .scan-frames { gap: 6px; padding: 6px; border-radius: 18px; }
+  .scan-grid { gap: 14px 4px; padding: 14px 6px 30px; }
+  .scan-pic figcaption { left: 8px; font-size: .7rem; }
+}

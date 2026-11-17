@@ -1,478 +1,231 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="Nexusclass uses AI face recognition to help teachers take attendance, distribute interactive living notes with AI tutors, and manage classroom records.">
-    <link rel="canonical" href="https://landing-page-bjb1uvnrv-own-a6f0.vercel.app/">
-    <meta property="og:url" content="https://landing-page-bjb1uvnrv-own-a6f0.vercel.app/">
-    <meta name="theme-color" content="#3f3a63">
-    <title>Nexusclass | AI Attendance & Smart Classroom Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&amp;family=Outfit:wght@300..700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Nexusclass marks your whole class from one photo, shares living notes with an AI tutor, and grades assignments in one place.">
+<meta name="theme-color" content="#2432e6">
+<title>Nexusclass | Take attendance with one photo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/motion.css') }}">
 </head>
 <body>
-    <div class="nx-bg" aria-hidden="true">
-        <i class="nx-shape nx-s1"></i>
-        <i class="nx-shape nx-s2"></i>
-        <i class="nx-shape nx-s3"></i>
-        <i class="nx-shape nx-s4"></i>
-    </div>
+<div class="nx-bg" aria-hidden="true">
+  <i class="nx-shape nx-s1"></i>
+  <i class="nx-shape nx-s2"></i>
+  <i class="nx-shape nx-s3"></i>
+  <i class="nx-shape nx-s4"></i>
+</div>
+<nav class="nav" aria-label="Main">
+  <a class="logo" href="#top"><svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#ffd23f"/><path d="M12 19v-4a3 3 0 0 1 3-3h4M29 12h4a3 3 0 0 1 3 3v4M36 29v4a3 3 0 0 1-3 3h-4M19 36h-4a3 3 0 0 1-3-3v-4" fill="none" stroke="#161a45" stroke-width="2.8" stroke-linecap="round"/><circle cx="24" cy="24" r="6" fill="#161a45"/></svg>Nexusclass</a>
+  <a class="l" href="#how">How it works</a><a class="l" href="#features">Features</a><a class="l" href="#guides">Video guides</a><a class="l" href="#faq">FAQ</a>
+  <a class="btn sun" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener"><span class="nav-cta-full">Open live app</span><span class="nav-cta-short">Open app</span></a>
+</nav>
 
-    <nav class="navbar" aria-label="Main navigation">
-        <a class="logo" href="#home" aria-label="Nexusclass home">
-            <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true">
-                <rect width="48" height="48" rx="10" fill="#0f172a"></rect>
-                <path d="M12 19v-4a3 3 0 0 1 3-3h4M29 12h4a3 3 0 0 1 3 3v4M36 29v4a3 3 0 0 1-3 3h-4M19 36h-4a3 3 0 0 1-3-3v-4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"></path>
-                <circle cx="24" cy="24" r="7" fill="#14b8a6"></circle>
-                <path d="M20.5 24l2.5 2.5 4.5-5" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <span class="logo-text">Nexusclass</span>
-        </a>
-        <div class="nav-links" id="nav-links">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#journey">Video Guides</a>
-            <a href="#notes-feature">Living Notes</a>
-            <a href="#tech">Tech Stack</a>
-            <a href="#faq">FAQ</a>
-            <a class="btn btn-teal nav-cta" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Start AI Attendance <span aria-hidden="true">&rarr;</span></a>
-        </div>
-        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-            <span></span><span></span><span></span>
+<header class="hero" id="top">
+  <div>
+    <h1>One photo. The whole class, marked.</h1>
+    <p class="sub">Nexusclass reads faces across your Left, Center and Right photos, merges the overlaps, and saves attendance in seconds. Notes, an AI tutor and grading live in the same place.</p>
+    <div class="row"><a class="btn sun" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Launch the working app</a><a class="btn ghost" href="#guides">Watch the guides</a></div>
+  </div>
+  <div>
+    <div class="frame" id="frame" role="img" aria-label="A classroom photo where every face is detected, counted, and duplicates are merged"><div class="beam" id="beam"></div><div class="saved" id="saved">Saved to class record</div></div>
+    <div class="hud" aria-live="polite"><b class="big" id="n">0</b><span id="lab">faces found</span><button class="btn ghost" id="again" hidden>Scan again</button></div>
+  </div>
+</header>
+
+<main>
+<section class="sec" id="how">
+  <h2>From three photos to one record</h2>
+  <p class="lead">Take photos from the left, center and right of the room. Nexusclass does the counting.</p>
+  <div class="steps">
+    <article class="card"><div class="num">1</div><h3>Snap and upload</h3><p>Pick the subject, then capture the class from three angles.</p></article>
+    <article class="card"><div class="num">2</div><h3>Analyze with AI</h3><p>Students who appear in two photos are counted once.</p>
+      <div class="strips" id="strips"><div class="st">Left 12</div><div class="st">Center 14</div><div class="st">Right 8</div><div class="ov" style="left:30%"></div><div class="ov" style="left:60%"></div></div>
+      <div class="tot"><b id="tot">34</b><span>faces found</span><button class="tog" id="tog" aria-pressed="false">Merge overlaps</button></div></article>
+    <article class="card"><div class="num">3</div><h3>Review and sync</h3><p>Check present and absent students with photo evidence, confirm, and the record appears in both portals.</p></article>
+  </div>
+</section>
+
+<section class="sec" id="features">
+  <h2>Everything a classroom needs</h2>
+  <p class="lead">Less admin for teachers, more independence for students.</p>
+  <div class="bento">
+    <article class="t c s3"><h3>Multi-angle face attendance</h3><p>Upload panoramic photos. The deduplication engine removes double counts across overlapping views.</p><div class="tri" aria-hidden="true"><i style="--a:-8deg"></i><i style="--a:0deg"></i><i style="--a:8deg"></i></div></article>
+    <article class="t s3"><h3>Join by link or QR</h3><p>Every subject gets a unique code, a copyable link and a Scan to Join QR code.</p><div id="qr" aria-hidden="true"></div></article>
+    <article class="t y s2"><h3>Review before saving</h3><p>Inspect results first. Nothing is committed until you confirm.</p><span class="chip m">30 present</span><span class="chip p">2 absent</span></article>
+    <article class="t s4"><h3>Living notes with an AI tutor</h3><p>Upload lecture PDFs. Students read them in the app and ask for a simpler explanation.</p><p class="note">The transistor works as a <mark>common-emitter amplifier</mark> when the input drives the base.</p><div class="bub">In simple terms: a tiny signal controls a much bigger current, like a faucet handle moving a river.</div></article>
+    <article class="t s3"><h3>Assessment and grading</h3><p>Publish tasks, collect PDF submissions, enter marks and leave feedback.</p><div class="stamp" aria-label="15 out of 20">15/20</div></article>
+    <article class="t s3"><h3>Student Face ID portal</h3><p>Students enroll with three face angles, then track attendance and read published marks.</p><span class="chip">Front</span><span class="chip">Left</span><span class="chip">Right</span></article>
+  </div>
+</section>
+
+<section class="sec" id="guides">
+  <h2>See it working</h2>
+  <p class="lead">Two short walkthroughs of the live app, one for teachers and one for students.</p>
+  <div class="tabs" role="tablist" aria-label="Video guides">
+    <button role="tab" id="tt" aria-selected="true" aria-controls="p-teacher">Teacher, 3 minutes</button>
+    <button role="tab" id="ts" aria-selected="false" aria-controls="p-student">Student, 2 minutes</button>
+  </div>
+  <div class="panel" id="p-teacher" role="tabpanel" aria-labelledby="tt">
+    <button class="poster" data-id="kGXJbQGDl8Y" data-t="Nexusclass teacher guide"><b></b><span>Play the teacher walkthrough</span></button>
+    <ol class="stp">
+      <li><strong>Register and log in</strong><span>Open the teacher dashboard.</span></li>
+      <li><strong>Create a subject</strong><span>Share its join link and QR code.</span></li>
+      <li><strong>Take attendance</strong><span>Upload Left, Center and Right photos.</span></li>
+      <li><strong>Upload living notes</strong><span>Turn on the AI tutor and add tasks.</span></li>
+      <li><strong>Grade submissions</strong><span>Enter marks, add feedback, publish.</span></li>
+    </ol>
+  </div>
+  <div class="panel" id="p-student" role="tabpanel" aria-labelledby="ts" hidden>
+    <button class="poster" data-id="wMs9LyDJGs8" data-t="Nexusclass student guide"><b></b><span>Play the student walkthrough</span></button>
+    <ol class="stp">
+      <li><strong>Enroll your face</strong><span>Front, left and right with pose checks.</span></li>
+      <li><strong>Join a class</strong><span>Enter the class code or scan the QR.</span></li>
+      <li><strong>Study with the AI tutor</strong><span>Open notes and ask for a simpler explanation.</span></li>
+      <li><strong>Submit assignments</strong><span>Download the task, attach your PDF.</span></li>
+      <li><strong>Track attendance and grades</strong><span>See marks and feedback once published.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <h2>Questions, answered</h2>
+  <p class="lead">How Nexusclass works in practice.</p>
+  <details><summary>How does multi-angle attendance work?</summary><p>Teachers photograph the room from the left, center and right. Nexusclass extracts face embeddings and filters overlaps so a student in two photos is counted once.</p></details>
+  <details><summary>What are living notes and the AI tutor?</summary><p>Students read a teacher?s uploaded PDF inside the app and tap Explain in Simple Terms to get an instant, plain-language breakdown.</p></details>
+  <details><summary>How do students join a subject?</summary><p>Share the join link, show the Scan to Join QR code on the projector, or give out the 4-digit subject code.</p></details>
+  <details><summary>How are assignments submitted and graded?</summary><p>Students download the task, upload a solution PDF, and teachers grade it with marks and feedback from their dashboard.</p></details>
+</section>
+</main>
+
+<footer class="cta">
+  <h2>Tomorrow?s roll call takes one photo.</h2>
+  <div class="row"><a class="btn sun" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Open the live app</a><a class="btn ghost" href="#guides">Watch the guides</a></div>
+  <span class="chip">Python 3.11</span><span class="chip">Streamlit</span><span class="chip">Flask</span><span class="chip">Face recognition</span><span class="chip">Gemini AI tutor</span>
+</footer>
+
+<button id="nxChatToggle" class="nx-chat-toggle" aria-label="Open Nexusclass AI Assistant">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" /></svg>
+</button>
+
+<div id="nxChatBox" class="nx-chat-box">
+  <div class="nx-chat-header">
+    <div class="nx-chat-title"><span class="nx-status-dot"></span><span>Nexusclass AI Assistant</span></div>
+    <button id="nxChatClose" class="nx-chat-close" aria-label="Close Chat">&times;</button>
+  </div>
+  <div id="nxChatMessages" class="nx-chat-messages">
+    <div class="nx-msg nx-msg-agent">
+      Hello! I can help with the live app, attendance workflow, and learning notes.
+      <div class="nx-suggestions" aria-label="Suggested questions">
+        <p class="nx-suggestions-label">Choose a question</p>
+        <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('Where can I try the live working app?')">
+          <span class="nx-prompt-icon" aria-hidden="true">🌐</span>
+          <span class="nx-prompt-copy"><strong>Try the live app</strong><span>Where can I try it?</span></span>
+          <span aria-hidden="true">→</span>
         </button>
-    </nav>
-
-    <main class="wrap">
-        <section class="hero" id="home">
-            <div>
-                <p class="hero-eyebrow">AI attendance &amp; smart learning for modern classrooms</p>
-                <h1>Take attendance with <span>one photo</span>.</h1>
-                <p>Nexusclass uses AI face recognition to mark your whole class in seconds, distribute interactive living notes with an on-demand AI Tutor, and evaluate assignments in a closed-loop digital ecosystem.</p>
-                <div class="cta">
-                    <a class="btn btn-teal" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Launch Working App <span aria-hidden="true">&rarr;</span></a>
-                    <a class="btn btn-line" href="#journey">Watch Video Guides</a>
-                </div>
-                <ul class="hero-points" aria-label="Key benefits">
-                    <li>Multi-angle vision roll call</li>
-                    <li>Spatial deduplication engine</li>
-                    <li>Living notes &amp; AI tutor (ELI5)</li>
-                    <li>Closed-loop grading &amp; feedback</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="sec" id="how">
-            <h2>How it works</h2>
-            <p class="lead">Three steps from classroom photos to a verified, searchable record.</p>
-            <div class="grid">
-                <article class="card"><div class="n" aria-hidden="true">1</div><h3>Snap &amp; Upload</h3><p>Select your subject and capture class photos from multiple angles (Left, Center, Right).</p></article>
-                <article class="card"><div class="n" aria-hidden="true">2</div><h3>Analyze with AI</h3><p>Run biometric face analysis with spatial deduplication to recognize every present student without double-counting.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">3</div><h3>Review &amp; Sync</h3><p>Review the attendance list, confirm, and instantly sync records across student and teacher portals.</p></article>
-            </div>
-        </section>
-
-        <section class="sec" id="features">
-            <h2>Everything for a modern classroom</h2>
-            <p class="lead">Built to save teachers hours of administrative effort while empowering student autonomy.</p>
-            <div class="grid">
-                <article class="card"><div class="n" aria-hidden="true">1</div><h3>Multi-Angle Face Attendance</h3><p>Upload panoramic photos; the AI deduplication engine detects faces and eliminates double-counts across overlapping camera views.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">2</div><h3>Instant Join by Link or QR</h3><p>Every subject generates a unique code, copyable link, and "Scan to Join" QR code for zero-friction student onboarding.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">3</div><h3>Review Before Saving</h3><p>Inspect present and absent results with photo evidence before committing attendance to the database.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">4</div><h3>Interactive Living Notes</h3><p>Upload lecture PDFs that students can study interactively with an AI Tutor (ELI5) for simplified explanations.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">5</div><h3>Digital Assessment &amp; Grading</h3><p>Publish assignments, collect PDF submissions, input scores (e.g. 15/20), and provide real-time instructor feedback.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">6</div><h3>Student Biometric Portal</h3><p>Students register with 3-angle facial verification, track personal attendance percentages, and view evaluated marks.</p></article>
-            </div>
-        </section>
-
-        <section class="sec" id="why">
-            <h2>Why Nexusclass</h2>
-            <p class="lead">Manual roll calls waste valuable teaching time. Here is the difference.</p>
-            <div class="cmp">
-                <div class="card">
-                    <h3>Manual roll call</h3>
-                    <ul><li>Calling names one by one takes 10+ minutes</li><li>Paper sheets that get lost or damaged</li><li>Tedious to calculate attendance percentages</li><li>No integration with lecture notes or homework</li></ul>
-                </div>
-                <div class="card new">
-                    <h3>With Nexusclass</h3>
-                    <ul><li>One photo scan marks the entire room in seconds</li><li>Every session saved automatically to cloud database</li><li>Interactive living notes with on-demand AI Tutor</li><li>Integrated homework submission &amp; marks grading</li></ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================================
-             INTERACTIVE VIDEO GUIDES & WORKING APP SHOWCASE
-             ======================================================== -->
-        <section class="sec" id="journey">
-            <div class="sec-header">
-                <h2>Interactive Video Guides &amp; Workflow</h2>
-                <p class="lead">Watch the full video walkthroughs below to see how teachers and students interact with the working app in real classrooms.</p>
-                <div class="working-app-banner">
-                    <div class="working-app-status">
-                        <span class="status-dot"></span>
-                        <span><strong>Live Working Application:</strong> Tested &amp; deployed live on Streamlit Cloud</span>
-                    </div>
-                    <a class="btn btn-teal btn-sm" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Open Working App &rarr;</a>
-                </div>
-            </div>
-
-            <!-- TEACHER GUIDE BLOCK -->
-            <div class="guide-block" id="teacher-guide">
-                <div class="guide-block-header">
-                    <div class="guide-header-left">
-                        <span class="guide-badge guide-badge-teacher">&#127891; Instructor Workflow</span>
-                        <h3 class="guide-title">Teacher Dashboard Walkthrough</h3>
-                        <p class="guide-subtitle">Full 3-minute video guide covering course creation, multi-angle AI attendance, living notes, and assessment grading.</p>
-                    </div>
-                    <a class="btn btn-yt btn-sm" href="https://youtu.be/kGXJbQGDl8Y" target="_blank" rel="noopener">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        Watch on YouTube
-                    </a>
-                </div>
-
-                <div class="guide-content">
-                    <div class="guide-media">
-                        <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/kGXJbQGDl8Y?rel=0" 
-                                title="Nexusclass Teacher Dashboard Video Guide" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <div class="video-meta">
-                            <span class="video-meta-tag">&#9201; Duration: 3:00 (Full 5-Step Demo)</span>
-                            <a class="btn btn-line btn-sm" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Launch Teacher Portal &rarr;</a>
-                        </div>
-                    </div>
-
-                    <div class="guide-info">
-                        <div class="step-list">
-                            <div class="step-item">
-                                <span class="step-num">1</span>
-                                <div class="step-info">
-                                    <strong>Teacher Registration &amp; Login</strong>
-                                    <p>Sign up as an educator, verify credentials, and access the centralized teacher management dashboard.</p>
-                                </div>
-                            </div>
-                            <div class="step-item">
-                                <span class="step-num">2</span>
-                                <div class="step-info">
-                                    <strong>Create Subject &amp; Share Join QR</strong>
-                                    <p>Set up new courses (e.g. <em>3245 - Analog Electronic</em>) with instant join links and dynamic "Scan to Join" QR codes.</p>
-                                </div>
-                            </div>
-                            <div class="step-item">
-                                <span class="step-num">3</span>
-                                <div class="step-info">
-                                    <strong>AI Roll Call with Room Dedup Engine</strong>
-                                    <p>Capture multi-angle classroom photos (Left, Center, Right); AI eliminates duplicate detections across overlapping angles.</p>
-                                </div>
-                            </div>
-                            <div class="step-item">
-                                <span class="step-num">4</span>
-                                <div class="step-info">
-                                    <strong>Upload Living Notes &amp; AI Tutor (ELI5)</strong>
-                                    <p>Upload lecture PDFs, enable the interactive living reader, test the on-demand AI Tutor, and create assessment tasks.</p>
-                                </div>
-                            </div>
-                            <div class="step-item">
-                                <span class="step-num">5</span>
-                                <div class="step-info">
-                                    <strong>Review Submissions &amp; Grade Marks</strong>
-                                    <p>Inspect student assignment PDF submissions, enter marks (e.g. <em>15.0 / 20.0</em>), provide feedback, and publish grades.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- STUDENT GUIDE BLOCK -->
-            <div class="guide-block" id="student-guide">
-                <div class="guide-block-header">
-                    <div class="guide-header-left">
-                        <span class="guide-badge guide-badge-student">&#128104;&#8205;&#127891; Student Experience</span>
-                        <h3 class="guide-title">Student Learning Portal Walkthrough</h3>
-                        <p class="guide-subtitle">Full 2-minute video guide covering biometric Face ID enrollment, subject discovery, interactive notes, and assignment hand-in.</p>
-                    </div>
-                    <a class="btn btn-yt btn-sm" href="https://youtu.be/wMs9LyDJGs8" target="_blank" rel="noopener">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        Watch on YouTube
-                    </a>
-                </div>
-
-                <div class="guide-content">
-                    <div class="guide-media">
-                        <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/wMs9LyDJGs8?rel=0" 
-                                title="Nexusclass Student Portal Video Guide" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <div class="video-meta">
-                            <span class="video-meta-tag">&#9201; Duration: 2:00 (Student Workflow)</span>
-                            <a class="btn btn-line btn-sm" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Launch Student Portal &rarr;</a>
-                        </div>
-                    </div>
-
-                    <div class="guide-info">
-                        <div class="step-list">
-                            <div class="step-item step-item-student">
-                                <span class="step-num">1</span>
-                                <div class="step-info">
-                                    <strong>Biometric Face ID Enrollment</strong>
-                                    <p>Register student account with 3-angle facial verification (Front, Left, Right) and real-time pose validation.</p>
-                                </div>
-                            </div>
-                            <div class="step-item step-item-student">
-                                <span class="step-num">2A</span>
-                                <div class="step-info">
-                                    <strong>Subject Discovery &amp; Enrollment</strong>
-                                    <p>Enroll in classes with one click by entering the teacher's class code or scanning the shared class QR code.</p>
-                                </div>
-                            </div>
-                            <div class="step-item step-item-student">
-                                <span class="step-num">2B</span>
-                                <div class="step-info">
-                                    <strong>Interactive Living Notes Study</strong>
-                                    <p>Access lecture notes on demand and ask the conversational AI assistant to explain difficult concepts (ELI5).</p>
-                                </div>
-                            </div>
-                            <div class="step-item step-item-student">
-                                <span class="step-num">3</span>
-                                <div class="step-info">
-                                    <strong>Assignment Download &amp; PDF Submission</strong>
-                                    <p>Download assessment task papers, attach completed PDF homework solutions, and get timestamped delivery receipts.</p>
-                                </div>
-                            </div>
-                            <div class="step-item step-item-student">
-                                <span class="step-num">4</span>
-                                <div class="step-info">
-                                    <strong>Attendance &amp; Grade Records</strong>
-                                    <p>Monitor personal attendance stats across subjects and view published grades with teacher feedback in real time.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================================
-             LIVING NOTES & AI TUTOR SECTION
-             ======================================================== -->
-        <section class="sec" id="notes-feature">
-            <span class="soon" style="background: #10b981;">Now Live in Working App</span>
-            <h2>Interactive Living Notes &amp; AI Tutor (ELI5)</h2>
-            <p class="lead">Teachers attach notes and assessments to subjects; enrolled students study with an on-demand AI conceptual simplifier.</p>
-            <div class="grid">
-                <article class="card"><div class="n" aria-hidden="true">1</div><h3>Attach Course Notes</h3><p>Upload lecture PDFs directly to any subject you manage for immediate class distribution.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">2</div><h3>AI Tutor (ELI5)</h3><p>Students can highlight any technical passage and click 'Explain in Simple Terms' for instant mastery.</p></article>
-                <article class="card"><div class="n" aria-hidden="true">3</div><h3>Digital Assessment &amp; Grading</h3><p>Publish assignments, collect PDF submissions, and award grades with personalized feedback.</p></article>
-            </div>
-        </section>
-
-        <section class="sec" id="tech">
-            <h2>Tech stack</h2>
-            <p class="lead">The tools and frameworks powering the Nexusclass experience.</p>
-            <div class="chips">
-                <span class="chip">Python 3.11</span>
-                <span class="chip">Streamlit (Working App)</span>
-                <span class="chip">Flask (Landing &amp; Chatbot)</span>
-                <span class="chip">AI Face Recognition</span>
-                <span class="chip">Spatial Deduplication</span>
-                <span class="chip">Interactive Living Reader</span>
-                <span class="chip">Gemini AI Tutor</span>
-                <span class="chip">QR Code Sharing</span>
-                <span class="chip">Biometric Face ID</span>
-            </div>
-        </section>
-
-        <section class="sec" id="faq">
-            <h2>Questions &amp; Answers</h2>
-            <p class="lead">Quick answers about how Nexusclass works in practice.</p>
-            <details><summary>Where can I try the live working application?</summary><p>You can access the deployed working application at <a href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">nexusattendance.streamlit.app</a>. Both the Teacher Dashboard and Student Learning Portal are live and functional.</p></details>
-            <details><summary>How does multi-angle face attendance work?</summary><p>Teachers take panoramic photos of the classroom (Left, Center, Right). Nexusclass extracts facial embeddings and runs a spatial deduplication filter to ensure students appearing in overlapping photos are counted only once.</p></details>
-            <details><summary>Where can I watch the video walkthroughs?</summary><p>You can watch the 3-minute Teacher Guide at <a href="https://youtu.be/kGXJbQGDl8Y" target="_blank" rel="noopener">youtu.be/kGXJbQGDl8Y</a> and the 2-minute Student Guide at <a href="https://youtu.be/wMs9LyDJGs8" target="_blank" rel="noopener">youtu.be/wMs9LyDJGs8</a>.</p></details>
-            <details><summary>What is the Living Note Reader and AI Tutor (ELI5)?</summary><p>When a teacher uploads a course PDF, students can read it inside the app and click 'Explain in Simple Terms (ELI5)' to get an instant AI-powered conceptual breakdown of difficult topics.</p></details>
-            <details><summary>How do students submit assignments and receive grades?</summary><p>Students download assessment papers directly from their portal, upload their completed solution PDF, and teachers grade them with marks and feedback in their dashboard.</p></details>
-            <details><summary>How do students join a subject?</summary><p>Teachers can share a direct join link, display a "Scan to Join" QR code on the classroom projector, or provide a 4-digit subject code for students to enter in their portal.</p></details>
-        </section>
-
-        <section class="cta-band" aria-labelledby="cta-title">
-            <h2 id="cta-title">Ready to modernize your classroom?</h2>
-            <p>Experience automated AI attendance, interactive living notes, and effortless assessment management.</p>
-            <a class="btn btn-white" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Launch Working App Now <span aria-hidden="true">&rarr;</span></a>
-        </section>
-    </main>
-
-    <footer>Created with <span aria-label="love">&hearts;</span> by Abhishek Tiwari &bull; Nexusclass Platform</footer>
-
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-            document.documentElement.classList.add('js');
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            document.querySelectorAll('.card, .chip, details, .cta-band, .guide-block').forEach(function (element) {
-                observer.observe(element);
-            });
-        }());
-    </script>
-    <script>
-        (function () {
-            var navbar = document.querySelector('.navbar');
-            var button = document.querySelector('.menu-btn');
-            if (!navbar || !button) return;
-
-            function setMenuOpen(isOpen) {
-                navbar.classList.toggle('open', isOpen);
-                button.setAttribute('aria-expanded', String(isOpen));
-                button.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-            }
-
-            button.addEventListener('click', function () {
-                setMenuOpen(button.getAttribute('aria-expanded') !== 'true');
-            });
-
-            navbar.querySelectorAll('.nav-links a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    setMenuOpen(false);
-                });
-            });
-
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
-                    setMenuOpen(false);
-                    button.focus();
-                }
-            });
-
-            window.addEventListener('resize', function () {
-                if (window.innerWidth > 860) setMenuOpen(false);
-            });
-        }());
-    </script>
-
-    <!-- Nexusclass AI Chat Widget -->
-    <button id="nxChatToggle" class="nx-chat-toggle" aria-label="Open Nexusclass AI Assistant">
-        <svg viewBox="0 0 24 24">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-        </svg>
-    </button>
-
-    <div id="nxChatBox" class="nx-chat-box">
-        <div class="nx-chat-header">
-            <div class="nx-chat-title">
-                <span class="nx-status-dot"></span>
-                <span>Nexusclass AI Assistant</span>
-            </div>
-            <button id="nxChatClose" class="nx-chat-close" aria-label="Close Chat">&times;</button>
-        </div>
-        <div id="nxChatMessages" class="nx-chat-messages">
-            <div class="nx-msg nx-msg-agent">
-                Hello! &#128075; I'm the Nexusclass AI Assistant. Ask me anything about taking attendance with photos, our interactive living notes, or testing the working app!
-                <div class="nx-suggestions" aria-label="Suggested questions">
-                    <p class="nx-suggestions-label">Choose a question to get started</p>
-                    <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('Where can I try the live working app?')">
-                        <span class="nx-prompt-icon" aria-hidden="true">&#127760;</span>
-                        <span class="nx-prompt-copy"><strong>Try the live app</strong><span>Where can I try the live app?</span></span>
-                        <span class="nx-prompt-arrow" aria-hidden="true">&rarr;</span>
-                    </button>
-                    <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('What are the YouTube video guide links?')">
-                        <span class="nx-prompt-icon" aria-hidden="true">&#127916;</span>
-                        <span class="nx-prompt-copy"><strong>Watch video guides</strong><span>Show me the teacher and student guides</span></span>
-                        <span class="nx-prompt-arrow" aria-hidden="true">&rarr;</span>
-                    </button>
-                    <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('How does multi-angle photo attendance work?')">
-                        <span class="nx-prompt-icon" aria-hidden="true">&#128248;</span>
-                        <span class="nx-prompt-copy"><strong>Photo attendance</strong><span>How does photo attendance work?</span></span>
-                        <span class="nx-prompt-arrow" aria-hidden="true">&rarr;</span>
-                    </button>
-                </div>
-            </div>
-            <div id="nxTyping" class="nx-typing">Nexus Assistant is typing...</div>
-        </div>
-        <form id="nxChatForm" class="nx-chat-input-row" onsubmit="handleChatSubmit(event)">
-            <input id="nxChatInput" class="nx-chat-input" type="text" placeholder="Ask a question..." autocomplete="off">
-            <button type="submit" class="nx-send-btn" aria-label="Send">&rarr;</button>
-        </form>
+        <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('What are the YouTube video guide links?')">
+          <span class="nx-prompt-icon" aria-hidden="true">🎬</span>
+          <span class="nx-prompt-copy"><strong>Watch guides</strong><span>Teacher and student videos</span></span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('How does multi-angle attendance work?')">
+          <span class="nx-prompt-icon" aria-hidden="true">📸</span>
+          <span class="nx-prompt-copy"><strong>Photo attendance</strong><span>How does it count faces?</span></span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
     </div>
+    <div id="nxTyping" class="nx-typing">Nexus Assistant is typing...</div>
+  </div>
+  <form id="nxChatForm" class="nx-chat-input-row" onsubmit="handleChatSubmit(event)">
+    <input id="nxChatInput" class="nx-chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
+    <button type="submit" class="nx-send-btn" aria-label="Send">→</button>
+  </form>
+</div>
 
-    <script>
-        const chatToggle = document.getElementById('nxChatToggle');
-        const chatBox = document.getElementById('nxChatBox');
-        const chatClose = document.getElementById('nxChatClose');
-        const chatInput = document.getElementById('nxChatInput');
-        const chatMessages = document.getElementById('nxChatMessages');
-        const typingIndicator = document.getElementById('nxTyping');
+<script>
+const $=s=>document.querySelector(s),F=$('#frame'),N=$('#n'),L=$('#lab'),B=$('#beam'),S=$('#saved'),A=$('#again');
+let a=7;const rnd=()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const seats=[];for(let i=0;i<32;i++){const c=i%8,r=i>>3;seats.push({x:9.5+c*11.8+(rnd()-.5)*2.6,y:18+r*21.5+(rnd()-.5)*3,h:Math.floor(rnd()*360),abs:i==10||i==21,dup:[3,12,19,28].includes(i)})}
+F.insertAdjacentHTML('afterbegin',seats.map(s=>`<div class="seat${s.abs?' empty':''}" style="left:${s.x}%;top:${s.y}%;--c:hsl(${s.h} 75% 74%)"><i class="head"></i><i class="body"></i>${s.abs?'':'<u class="bx"></u>'}${s.dup?'<u class="bx dup"></u>':''}</div>`).join(''));
+const E=[...F.querySelectorAll('.seat')],D=2800;let T=[];
+function reset(){T.forEach(clearTimeout);T=[];F.querySelectorAll('.bx').forEach(b=>b.classList.remove('on','off'));S.classList.remove('show');A.hidden=true;N.textContent='0';L.textContent='faces found';B.classList.remove('run')}
+function done(){N.textContent='30';N.classList.remove('pop');void N.offsetWidth;N.classList.add('pop');L.textContent='present, 2 absent, 4 duplicates merged';F.querySelectorAll('.bx.dup').forEach(b=>b.classList.add('off'));S.classList.add('show');A.hidden=false}
+function run(){reset();if(matchMedia('(prefers-reduced-motion:reduce)').matches){F.querySelectorAll('.bx:not(.dup)').forEach(b=>b.classList.add('on'));return done()}
+void B.offsetWidth;B.classList.add('run');let c=0;
+seats.forEach((s,i)=>E[i].querySelectorAll('.bx').forEach(b=>T.push(setTimeout(()=>{b.classList.add('on');N.textContent=++c},s.y/100*D+(b.classList.contains('dup')?260:0)))));
+T.push(setTimeout(done,D+900))}
+A.onclick=run;run();
+$('#tog').onclick=e=>{const o=e.currentTarget.getAttribute('aria-pressed')!='true';e.currentTarget.setAttribute('aria-pressed',o);$('#strips').classList.toggle('merged',o);$('#tot').textContent=o?30:34};
+let k='';for(let i=0;i<81;i++){const x=i%9,y=i/9|0,f=(x<3&&y<3)||(x>5&&y<3)||(x<3&&y>5);k+=`<i${f||rnd()>.55?' class="k"':''}></i>`}$('#qr').innerHTML=k;
+const tabs=document.querySelectorAll('[role=tab]');tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x==t));document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!=t.getAttribute('aria-controls'))});
+document.querySelectorAll('.poster').forEach(p=>p.onclick=()=>{p.outerHTML=`<iframe class="poster" src="https://www.youtube-nocookie.com/embed/${p.dataset.id}?autoplay=1&rel=0" title="${p.dataset.t}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`});
+</script>
+<script src="{{ url_for('static', filename='js/motion.js') }}"></script>
+<script>
+const chatToggle = document.getElementById('nxChatToggle');
+const chatBox = document.getElementById('nxChatBox');
+const chatClose = document.getElementById('nxChatClose');
+const chatInput = document.getElementById('nxChatInput');
+const chatMessages = document.getElementById('nxChatMessages');
+const typingIndicator = document.getElementById('nxTyping');
 
-        chatToggle.addEventListener('click', () => {
-            const isVisible = chatBox.style.display === 'flex';
-            chatBox.style.display = isVisible ? 'none' : 'flex';
-            if (!isVisible) chatInput.focus();
-        });
+chatToggle.addEventListener('click', () => {
+  const isVisible = chatBox.style.display === 'flex';
+  chatBox.style.display = isVisible ? 'none' : 'flex';
+  if (!isVisible) chatInput.focus();
+});
 
-        chatClose.addEventListener('click', () => {
-            chatBox.style.display = 'none';
-        });
+chatClose.addEventListener('click', () => {
+  chatBox.style.display = 'none';
+});
 
-        function appendMessage(text, isUser) {
-            const msg = document.createElement('div');
-            msg.className = 'nx-msg ' + (isUser ? 'nx-msg-user' : 'nx-msg-agent');
-            msg.innerHTML = text.replace(/\n/g, '<br>');
-            chatMessages.insertBefore(msg, typingIndicator);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+function appendMessage(text, isUser) {
+  const msg = document.createElement('div');
+  msg.className = 'nx-msg ' + (isUser ? 'nx-msg-user' : 'nx-msg-agent');
+  msg.innerHTML = text.replace(/\n/g, '<br>');
+  chatMessages.insertBefore(msg, typingIndicator);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
 
-        async function sendUserMessage(msgText) {
-            if (!msgText) return;
-            appendMessage(msgText, true);
-            typingIndicator.style.display = 'block';
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+async function sendUserMessage(msgText) {
+  if (!msgText) return;
+  appendMessage(msgText, true);
+  typingIndicator.style.display = 'block';
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msgText })
+    });
+    const data = await res.json();
+    typingIndicator.style.display = 'none';
+    if (data.response) {
+      appendMessage(data.response, false);
+    } else {
+      appendMessage('Sorry, there was an issue: ' + (data.error || 'Unknown error'), false);
+    }
+  } catch (error) {
+    typingIndicator.style.display = 'none';
+    appendMessage('Failed to reach the assistant server. Is app.py running?', false);
+  }
+}
 
-            try {
-                const res = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: msgText })
-                });
-                const data = await res.json();
-                typingIndicator.style.display = 'none';
-                if (data.response) {
-                    appendMessage(data.response, false);
-                } else {
-                    appendMessage("Sorry, I encountered an issue: " + (data.error || "Unknown error"), false);
-                }
-            } catch (err) {
-                typingIndicator.style.display = 'none';
-                appendMessage("Failed to reach the assistant server. Is app.py running?", false);
-            }
-        }
+function handleChatSubmit(e) {
+  e.preventDefault();
+  const text = chatInput.value.trim();
+  if (!text) return;
+  chatInput.value = '';
+  sendUserMessage(text);
+}
 
-        function handleChatSubmit(e) {
-            e.preventDefault();
-            const text = chatInput.value.trim();
-            if (!text) return;
-            chatInput.value = '';
-            sendUserMessage(text);
-        }
-
-        function sendQuickPrompt(promptText) {
-            sendUserMessage(promptText);
-        }
-    </script>
+function sendQuickPrompt(promptText) {
+  sendUserMessage(promptText);
+}
+</script>
 </body>
 </html>
