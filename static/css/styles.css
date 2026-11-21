@@ -30,6 +30,7 @@ a{color:inherit}p{margin:0}
 .hero .sub{font-size:1.2rem;max-width:34ch;margin:24px 0 32px;opacity:.92}
 .row{display:flex;gap:12px;flex-wrap:wrap}
 .frame{position:relative;aspect-ratio:8/5.2;background:#1c2290;border-radius:26px;border:2px solid rgba(255,255,255,.28);overflow:hidden;box-shadow:0 30px 60px -22px rgba(8,10,80,.65)}
+.attendance-art{display:block;width:100%;height:100%;object-fit:cover}
 .seat{position:absolute;width:9%;aspect-ratio:1/1.15;transform:translate(-50%,-50%)}
 .head{position:absolute;left:25%;top:0;width:50%;aspect-ratio:1;border-radius:50%;background:var(--c)}
 .body{position:absolute;left:6%;right:6%;bottom:0;height:48%;border-radius:50% 50% 8% 8%/90% 90% 8% 8%;background:var(--c);opacity:.8}

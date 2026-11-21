@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 546" role="img" aria-labelledby="title desc">
+  <title id="title">Attendance from three classroom views</title>
+  <desc id="desc">Three classroom photo cards show students from left, center, and right angles. Repeated students are outlined with dashed rings and merged into one attendance list.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#20278f"/><stop offset="1" stop-color="#11184f"/></linearGradient>
+    <linearGradient id="ready" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#35d49a"/><stop offset="1" stop-color="#22daff"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect x="5" y="5" width="830" height="536" rx="34" fill="url(#bg)" stroke="#6272ff" stroke-width="3"/>
+  <circle cx="734" cy="76" r="72" fill="#22daff" opacity=".08" filter="url(#glow)"/>
+  <text x="34" y="47" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2">ONE CLASS, THREE VIEWS</text>
+  <text x="34" y="72" fill="#aeb9ff" font-family="Arial,sans-serif" font-size="13">Overlapping faces are matched and counted once</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(24 96)">
+      <rect width="248" height="326" rx="20" fill="#202866" stroke="#5362da" stroke-width="2"/>
+      <text x="124" y="34" fill="#ffd23f" font-size="14" font-weight="700" letter-spacing="1.5">LEFT VIEW</text>
+      <path d="M24 51H224" stroke="#4450aa" stroke-width="1"/>
+      <g transform="translate(68 110)"><circle r="24" fill="#f28aa8"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#d374a0"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+      <g transform="translate(178 110)"><circle r="24" fill="#8ceac4"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#63c7a7"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+      <g transform="translate(68 250)"><circle r="24" fill="#89d3f1"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#6eaad8"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+      <g transform="translate(178 250)"><circle r="24" fill="#e7ea7b"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#b9c878"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+    </g>
+    <g transform="translate(296 96)">
+      <rect width="248" height="326" rx="20" fill="#202866" stroke="#5362da" stroke-width="2"/>
+      <text x="124" y="34" fill="#ffd23f" font-size="14" font-weight="700" letter-spacing="1.5">CENTER VIEW</text>
+      <path d="M24 51H224" stroke="#4450aa" stroke-width="1"/>
+      <g transform="translate(68 110)"><circle r="24" fill="#8ceac4"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#63c7a7"/><rect x="-50" y="-38" width="100" height="124" rx="15" fill="none" stroke="#22daff" stroke-width="3" stroke-dasharray="7 6"/><path d="M-35-27l70 102M35-27l-70 102" stroke="#22daff" stroke-width="1.5" opacity=".55"/></g>
+      <g transform="translate(178 110)"><circle r="24" fill="#c4a2ff"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#9676d8"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+      <g transform="translate(68 250)"><circle r="24" fill="#f39d86"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#d77e86"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+      <g transform="translate(178 250)"><circle r="24" fill="#f28aa8"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#d374a0"/><rect x="-50" y="-38" width="100" height="124" rx="15" fill="none" stroke="#22daff" stroke-width="3" stroke-dasharray="7 6"/><path d="M-35-27l70 102M35-27l-70 102" stroke="#22daff" stroke-width="1.5" opacity=".55"/></g>
+    </g>
+    <g transform="translate(568 96)">
+      <rect width="248" height="326" rx="20" fill="#202866" stroke="#5362da" stroke-width="2"/>
+      <text x="124" y="34" fill="#ffd23f" font-size="14" font-weight="700" letter-spacing="1.5">RIGHT VIEW</text>
+      <path d="M24 51H224" stroke="#4450aa" stroke-width="1"/>
+      <g transform="translate(68 110)"><circle r="24" fill="#8ceac4"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#63c7a7"/><rect x="-50" y="-38" width="100" height="124" rx="15" fill="none" stroke="#22daff" stroke-width="3" stroke-dasharray="7 6"/><path d="M-35-27l70 102M35-27l-70 102" stroke="#22daff" stroke-width="1.5" opacity=".55"/></g>
+      <g transform="translate(178 110)"><circle r="24" fill="#f08fb0"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#c46fa4"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+      <g transform="translate(68 250)"><circle r="24" fill="#89d3f1"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#6eaad8"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+      <g transform="translate(178 250)"><circle r="24" fill="#e7ea7b"/><path d="M-38 74c2-27 17-42 38-42s36 15 38 42c-17 12-59 12-76 0" fill="#b9c878"/><rect x="-48" y="-36" width="96" height="120" rx="13" fill="none" stroke="#ffd23f" stroke-width="2.5"/></g>
+    </g>
+  </g>
+  <rect x="189" y="461" width="462" height="56" rx="28" fill="url(#ready)"/>
+  <circle cx="224" cy="489" r="15" fill="#10385c" opacity=".9"/><path d="m217 489 5 5 10-11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="426" y="495" text-anchor="middle" fill="#103047" font-family="Arial,sans-serif" font-size="17" font-weight="700">OVERLAPS REMOVED ? READY TO SAVE</text>
+</svg>
