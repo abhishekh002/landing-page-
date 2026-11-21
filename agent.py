@@ -22,6 +22,7 @@ Key facts about Nexusclass:
   * Teacher Dashboard Walkthrough (3 min): https://youtu.be/kGXJbQGDl8Y
   * Student Portal Walkthrough (2 min): https://youtu.be/wMs9LyDJGs8
 - Working Application Live Demo: Available right now at https://nexusattendance.streamlit.app/
+- Teacher account recovery: teachers can request a six-digit password reset code at the email address on their account; codes expire after 10 minutes. Email delivery requires the app administrator to configure a verified sending domain.
 
 Tone: Helpful, polite, concise, and enthusiastic. When users ask how it works or where to watch demos, provide the exact links and clear bullet points.""",
 )
