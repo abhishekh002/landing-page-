@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Nexusclass marks your whole class from one photo, shares living notes with an AI tutor, and grades assignments in one place.">
+<meta name="description" content="Nexusclass helps teachers review attendance, share class notes, support student learning, and manage assignments in one place.">
 <meta name="theme-color" content="#22daff">
-<title>Nexusclass | Take attendance with one photo</title>
+<title>Nexusclass | A calmer way to run your classroom</title>
 <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
 <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/logo.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/motion.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/natural.css') }}">
 </head>
 <body>
 <div class="nx-bg" aria-hidden="true">
@@ -28,8 +29,8 @@
 
 <header class="hero" id="top">
   <div>   
-    <h1>One photo. The whole class, marked.</h1>
-    <p class="sub">Nexusclass reads faces across your Left, Center and Right photos, merges the overlaps, and saves attendance in seconds. Notes, an AI tutor and grading live in the same place.</p>
+    <h1>A clearer picture of every class.</h1>
+    <p class="sub">Take a few views of the room, review the suggested matches, and save attendance with a teacher in control. Class notes, assignments, and student progress stay together.</p>
     <div class="row"><a class="btn sun" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Launch the working app</a><a class="btn ghost" href="#guides">Watch the guides</a><a class="btn ghost" href="https://abhishekh002.github.io/System-documentation/" target="_blank" rel="noopener noreferrer">System documentation ↗</a></div>
   </div>
   <div>
@@ -40,34 +41,34 @@
 
 <main>
 <section class="sec" id="how">
-  <h2>From three photos to one record</h2>
-  <p class="lead">Take photos from the left, center and right of the room. Nexusclass does the counting.</p>
+  <h2>Attendance, one step at a time</h2>
+  <p class="lead">A simple flow helps teachers check the room, review suggestions, and save a class record.</p>
   <div class="steps">
-    <article class="card"><div class="num">1</div><h3>Snap and upload</h3><p>Pick the subject, then capture the class from three angles.</p></article>
-    <article class="card"><div class="num">2</div><h3>Analyze with AI</h3><p>Students who appear in two photos are counted once.</p>
+    <article class="card"><div class="num">1</div><h3>Capture a few views</h3><p>Choose a subject and add views from around the room.</p></article>
+    <article class="card"><div class="num">2</div><h3>Review the matches</h3><p>Repeated appearances are grouped so a student is not counted twice.</p>
       <div class="strips" id="strips"><div class="st">Left 12</div><div class="st">Center 14</div><div class="st">Right 8</div><div class="ov" style="left:30%"></div><div class="ov" style="left:60%"></div></div>
       <div class="tot"><b id="tot">34</b><span>faces found</span><button class="tog" id="tog" aria-pressed="false">Merge overlaps</button></div></article>
-    <article class="card"><div class="num">3</div><h3>Review and sync</h3><p>Check present and absent students with photo evidence, confirm, and the record appears in both portals.</p></article>
+    <article class="card"><div class="num">3</div><h3>Save when it looks right</h3><p>Check who is present or absent, make any corrections, then save the record.</p></article>
   </div>
 </section>
 
 <section class="sec" id="features">
-  <h2>Everything a classroom needs</h2>
-  <p class="lead">Less admin for teachers, more independence for students.</p>
+  <h2>A few useful things, all together</h2>
+  <p class="lead">Everyday classroom tasks, gathered in one place for teachers and students.</p>
   <div class="bento">
-    <article class="t c s3"><h3>Multi-angle face attendance</h3><p>Upload panoramic photos. The deduplication engine removes double counts across overlapping views.</p><div class="tri" aria-hidden="true"><i style="--a:-8deg"></i><i style="--a:0deg"></i><i style="--a:8deg"></i></div></article>
+    <article class="t c s3"><h3>Attendance from a few angles</h3><p>Compare Left, Center, and Right views, review repeated matches, and correct the list before saving.</p><div class="tri" aria-hidden="true"><i style="--a:-8deg"></i><i style="--a:0deg"></i><i style="--a:8deg"></i></div></article>
     <article class="t s3"><h3>Join by link or QR</h3><p>Every subject gets a unique code, a copyable link and a Scan to Join QR code.</p><div id="qr" aria-hidden="true"></div></article>
     <article class="t y s2"><h3>Review before saving</h3><p>Inspect results first. Nothing is committed until you confirm.</p><span class="chip m">30 present</span><span class="chip p">2 absent</span></article>
-    <article class="t s4"><h3>Living notes with an AI tutor</h3><p>Upload lecture PDFs. Students read them in the app and ask for a simpler explanation.</p><p class="note">The transistor works as a <mark>common-emitter amplifier</mark> when the input drives the base.</p><div class="bub">In simple terms: a tiny signal controls a much bigger current, like a faucet handle moving a river.</div></article>
+    <article class="t s4"><h3>Notes students can ask about</h3><p>Upload lecture PDFs. Students read them in the app and ask for a simpler explanation.</p><p class="note">The transistor works as a <mark>common-emitter amplifier</mark> when the input drives the base.</p><div class="bub">In simple terms: a tiny signal controls a much bigger current, like a faucet handle moving a river.</div></article>
     <article class="t s3"><h3>Assessment and grading</h3><p>Publish tasks, collect PDF submissions, enter marks and leave feedback.</p><div class="stamp" aria-label="15 out of 20">15/20</div></article>
-    <article class="t s3"><h3>Student Face ID portal</h3><p>Students enroll with three face angles, then track attendance and read published marks.</p><span class="chip">Front</span><span class="chip">Left</span><span class="chip">Right</span></article>
+    <article class="t s3"><h3>A student view of class</h3><p>Students enroll with three face angles, then track attendance and read published marks.</p><span class="chip">Front</span><span class="chip">Left</span><span class="chip">Right</span></article>
     <article class="t y s3"><h3>Teacher account recovery</h3><p>Request a six-digit reset code at the email address on your teacher account. Codes expire after 10 minutes.</p><span class="chip">Email verification</span><span class="chip">10-minute code</span></article>
   </div>
 </section>
 
 <section class="sec" id="guides">
-  <h2>See it working</h2>
-  <p class="lead">Two short walkthroughs of the live app, one for teachers and one for students.</p>
+  <h2>Take a quick look around</h2>
+  <p class="lead">Short walkthroughs show the main steps for teachers and students.</p>
   <div class="tabs" role="tablist" aria-label="Video guides">
     <button role="tab" id="tt" aria-selected="true" aria-controls="p-teacher">Teacher, 3 minutes</button>
     <button role="tab" id="ts" aria-selected="false" aria-controls="p-student">Student, 2 minutes</button>
@@ -95,10 +96,10 @@
 </section>
 
 <section class="sec" id="faq">
-  <h2>Questions, answered</h2>
-  <p class="lead">How Nexusclass works in practice.</p>
+  <h2>A few common questions</h2>
+  <p class="lead">A little more detail about using Nexusclass day to day.</p>
   <details><summary>How does multi-angle attendance work?</summary><p>Teachers photograph the room from the left, center and right. Nexusclass extracts face embeddings and filters overlaps so a student in two photos is counted once.</p></details>
-  <details><summary>What are living notes and the AI tutor?</summary><p>Students read a teacher?s uploaded PDF inside the app and tap Explain in Simple Terms to get an instant, plain-language breakdown.</p></details>
+  <details><summary>What are living notes and the AI tutor?</summary><p>Students read a teacher's uploaded PDF inside the app and tap Explain in Simple Terms to get an instant, plain-language breakdown.</p></details>
   <details><summary>How do students join a subject?</summary><p>Share the join link, show the Scan to Join QR code on the projector, or give out the 4-digit subject code.</p></details>
   <details><summary>How are assignments submitted and graded?</summary><p>Students download the task, upload a solution PDF, and teachers grade it with marks and feedback from their dashboard.</p></details>
   <details><summary>How do I reset my teacher password?</summary><p>Choose Forgot password on the sign-in screen and enter the email on your teacher account. If email delivery is enabled, a six-digit code will arrive there and expire after 10 minutes. If no code arrives, contact your app administrator.</p></details>
@@ -106,7 +107,7 @@
 </main>
 
 <footer class="cta">
-  <h2>Tomorrow?s roll call takes one photo.</h2>
+  <h2>A little less time on roll call. More time to teach.</h2>
   <div class="row"><a class="btn sun" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Open the live app</a><a class="btn ghost" href="#guides">Watch the guides</a><a class="btn ghost" href="https://abhishekh002.github.io/System-documentation/" target="_blank" rel="noopener noreferrer">Read system docs ↗</a></div>
   <span class="chip">Python 3.11</span><span class="chip">Streamlit</span><span class="chip">Flask</span><span class="chip">Face recognition</span><span class="chip">Gemini AI tutor</span>
 </footer>
