@@ -1,10 +1,23 @@
 ﻿import os
 import asyncio
+from pathlib import Path
 from dotenv import load_dotenv
+
+# Load this project's .env regardless of the directory used to start Flask.
+load_dotenv(Path(__file__).resolve().with_name(".env"), override=False)
+
+# ADK accepts either name; normalize both so the Gemini client can find the key.
+api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+if api_key:
+    os.environ.setdefault("GEMINI_API_KEY", api_key)
+    os.environ.setdefault("GOOGLE_API_KEY", api_key)
+else:
+    raise RuntimeError(
+        "Gemini API key is missing. Add GEMINI_API_KEY or GOOGLE_API_KEY to the project's .env file."
+    )
+
 from google.adk.agents.llm_agent import Agent
 from google.adk.runners import InMemoryRunner
-
-load_dotenv()
 
 nexus_agent = Agent(
     model="gemini-flash-lite-latest",
