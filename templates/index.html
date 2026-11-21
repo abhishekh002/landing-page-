@@ -157,6 +157,7 @@ function reset(){T.forEach(clearTimeout);T=[];S.classList.remove('show');A.hidde
 function done(){N.textContent='30';N.classList.remove('pop');void N.offsetWidth;N.classList.add('pop');L.textContent='present, 2 absent, 4 duplicates merged';S.classList.add('show');A.hidden=false}
 function run(){reset();if(matchMedia('(prefers-reduced-motion:reduce)').matches){done();return}void B.offsetWidth;B.classList.add('run');const start=Date.now();const tick=()=>{const elapsed=Date.now()-start;N.textContent=String(Math.min(30,Math.floor(elapsed/D*30)));if(elapsed>=D){done();return}T.push(setTimeout(tick,90))};tick()}
 A.onclick=run;run();
+let a=7;const rnd=()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
 $('#tog').onclick=e=>{const o=e.currentTarget.getAttribute('aria-pressed')!='true';e.currentTarget.setAttribute('aria-pressed',o);$('#strips').classList.toggle('merged',o);$('#tot').textContent=o?30:34};
 let k='';for(let i=0;i<81;i++){const x=i%9,y=i/9|0,f=(x<3&&y<3)||(x>5&&y<3)||(x<3&&y>5);k+=`<i${f||rnd()>.55?' class="k"':''}></i>`}$('#qr').innerHTML=k;
 const tabs=document.querySelectorAll('[role=tab]');tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x==t));document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!=t.getAttribute('aria-controls'))});
