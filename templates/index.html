@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Nexusclass helps teachers review attendance, share class notes, support student learning, and manage assignments in one place.">
-<meta name="theme-color" content="#22daff">
+<meta name="description" content="Nexusclass brings AI-assisted attendance, classroom notes, assignments, and an AI Learning Studio for students and teachers together.">
+<meta name="theme-color" content="#dbe6d5">
 <title>Nexusclass | A calmer way to run your classroom</title>
 <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
 <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/logo.png') }}">
@@ -30,7 +30,7 @@
 <header class="hero" id="top">
   <div>   
     <h1>A clearer picture of every class.</h1>
-    <p class="sub">Take a few views of the room, review the suggested matches, and save attendance with a teacher in control. Class notes, assignments, and student progress stay together.</p>
+    <p class="sub">Take attendance with a teacher in control, keep class notes and assignments together, and help students study with an AI learning studio.</p>
     <div class="row"><a class="btn sun" href="https://nexusattendance.streamlit.app/" target="_blank" rel="noopener">Launch the working app</a><a class="btn ghost" href="#guides">Watch the guides</a><a class="btn ghost" href="https://abhishekh002.github.io/System-documentation/" target="_blank" rel="noopener noreferrer">System documentation ↗</a></div>
   </div>
   <div>
@@ -53,8 +53,8 @@
 </section>
 
 <section class="sec" id="features">
-  <h2>A few useful things, all together</h2>
-  <p class="lead">Everyday classroom tasks, gathered in one place for teachers and students.</p>
+  <h2>Teaching, attendance, and study support in one place</h2>
+  <p class="lead">Classroom tools for teachers, a clear learning dashboard for students, and an AI studio for questions, files, and practice.</p>
   <div class="bento">
     <article class="t c s3"><h3>Attendance from a few angles</h3><p>Compare Left, Center, and Right views, review repeated matches, and correct the list before saving.</p><div class="tri" aria-hidden="true"><i style="--a:-8deg"></i><i style="--a:0deg"></i><i style="--a:8deg"></i></div></article>
     <article class="t s3"><h3>Join by link or QR</h3><p>Every subject gets a unique code, a copyable link and a Scan to Join QR code.</p><div id="qr" aria-hidden="true"></div></article>
@@ -63,6 +63,9 @@
     <article class="t s3"><h3>Assessment and grading</h3><p>Publish tasks, collect PDF submissions, enter marks and leave feedback.</p><div class="stamp" aria-label="15 out of 20">15/20</div></article>
     <article class="t s3"><h3>A student view of class</h3><p>Students enroll with three face angles, then track attendance and read published marks.</p><span class="chip">Front</span><span class="chip">Left</span><span class="chip">Right</span></article>
     <article class="t y s3"><h3>Teacher account recovery</h3><p>Request a six-digit reset code at the email address on your teacher account. Codes expire after 10 minutes.</p><span class="chip">Email verification</span><span class="chip">10-minute code</span></article>
+    <article class="t c s3"><h3>AI Learning Studio</h3><p>Ask the tutor to explain a topic, make a study plan, practice with a quiz, or help a teacher shape a lesson idea.</p><span class="chip m">Topic coach</span><span class="chip">Study planner</span><span class="chip">Quiz practice</span></article>
+    <article class="t s3"><h3>Bring your class material</h3><p>Ask questions about PDFs, Word documents, PowerPoint slides, text, Markdown, and CSV files. Upload an image to ask about a diagram or worksheet.</p><span class="chip">PDF · DOCX · PPTX</span><span class="chip">TXT · MD · CSV</span><span class="chip">Image questions</span></article>
+    <article class="t y s3"><h3>Listen and check in</h3><p>Listen to AI tutor replies with read-aloud controls. Teachers can also use voice attendance where it is enabled for their class.</p><span class="chip">Read aloud</span><span class="chip">Voice attendance</span></article>
   </div>
 </section>
 
@@ -100,6 +103,8 @@
   <p class="lead">A little more detail about using Nexusclass day to day.</p>
   <details><summary>How does multi-angle attendance work?</summary><p>Teachers photograph the room from the left, center and right. Nexusclass extracts face embeddings and filters overlaps so a student in two photos is counted once.</p></details>
   <details><summary>What are living notes and the AI tutor?</summary><p>Students read a teacher's uploaded PDF inside the app and tap Explain in Simple Terms to get an instant, plain-language breakdown.</p></details>
+  <details><summary>What can students and teachers do in the AI Learning Studio?</summary><p>Ask questions about a topic, request a study plan or quiz practice, and get help developing lesson ideas. It can use supported uploaded documents as context. Image questions use the locally configured Janus vision model.</p></details>
+  <details><summary>Which files can I use with the AI tutor?</summary><p>The studio reads PDF, DOCX, PPTX, TXT, Markdown, and CSV files. It also accepts PNG, JPG, JPEG, and WEBP images for visual questions. Image analysis requires Janus to be installed and configured.</p></details>
   <details><summary>How do students join a subject?</summary><p>Share the join link, show the Scan to Join QR code on the projector, or give out the 4-digit subject code.</p></details>
   <details><summary>How are assignments submitted and graded?</summary><p>Students download the task, upload a solution PDF, and teachers grade it with marks and feedback from their dashboard.</p></details>
   <details><summary>How do I reset my teacher password?</summary><p>Choose Forgot password on the sign-in screen and enter the email on your teacher account. If email delivery is enabled, a six-digit code will arrive there and expire after 10 minutes. If no code arrives, contact your app administrator.</p></details>
@@ -123,7 +128,7 @@
   </div>
   <div id="nxChatMessages" class="nx-chat-messages">
     <div class="nx-msg nx-msg-agent">
-      Hello! I can help with the live app, attendance workflow, and learning notes.
+      Hello! I can help with attendance, class tools, the AI Learning Studio, and supported study files.
       <div class="nx-suggestions" aria-label="Suggested questions">
         <p class="nx-suggestions-label">Choose a question</p>
         <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('Where can I try the live working app?')">
@@ -139,6 +144,11 @@
         <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('How does multi-angle attendance work?')">
           <span class="nx-prompt-icon" aria-hidden="true">📸</span>
           <span class="nx-prompt-copy"><strong>Photo attendance</strong><span>How does it count faces?</span></span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <button class="nx-prompt-card" type="button" onclick="sendQuickPrompt('What can I do in the AI Learning Studio, and which file types does it support?')">
+          <span class="nx-prompt-icon" aria-hidden="true">📚</span>
+          <span class="nx-prompt-copy"><strong>AI Learning Studio</strong><span>Study help and supported files</span></span>
           <span aria-hidden="true">→</span>
         </button>
       </div>
